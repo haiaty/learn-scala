@@ -1,3 +1,4 @@
+
 /*
 * ----------------------
 *  array definition 1
@@ -52,3 +53,36 @@ for (i <- anArrayOfStrings)
 * */
 
 anArrayOfStrings.foreach(item => println(item))
+
+
+/*
+* ----------------------
+*  print array on console
+* ----------------------
+* */
+
+var myArray = Array(1,2,3,4)
+
+// way 1
+
+println(myArray.foreach(println))
+
+// way 2
+println(myArray.deep.mkString("\n"))
+
+
+/*
+* ----------------------
+*  map on array
+* ----------------------
+* */
+
+var myArray2 = Array(1,2,3,4)
+
+// _ is the current value of array
+// here we return a random number limited to 200
+// so basically it will return a new array with random numbers limited
+// to 200
+var newArrayAfterMap = myArray2.map(_ => scala.util.Random.nextInt(200))
+
+println(newArrayAfterMap.deep.mkString("\n"))
