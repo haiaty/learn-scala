@@ -32,6 +32,35 @@ println(newList)
 
 /*
 * ----------------------
+*  Head
+* ----------------------
+*
+* return the first element of a list
+*
+* */
+
+var headListExample = List(1,2,3)
+
+println(headListExample.head)
+
+/*
+* ----------------------
+*  Tail
+* ----------------------
+*
+* returns a new List without the first element
+*
+* */
+
+var tailListExample = List(1,2,3)
+val afterTailList = tailListExample.tail
+println(afterTailList)
+
+
+
+
+/*
+* ----------------------
 *  "trick" to have a dinamyc list
 * ----------------------
 *
