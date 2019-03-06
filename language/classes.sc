@@ -1,10 +1,10 @@
-
+// Classes in Scala cannot have static members.
 
 /*
 * ----------------------
 *  class with fields and methods
 * ----------------------
-*
+* -
 */
 // any code you place in the class body will be compiled when class
 // are instatiated
@@ -96,7 +96,8 @@ println(new ExamplePreconditionRequire(5))
 //when precondition is not respected a
 // java.lang.IllegalArgumentException: requirement failed
 // will be raised
-println(new ExamplePreconditionRequire(2))
+
+//println(new ExamplePreconditionRequire(2)) //throws java.lang.IllegalArgumentException
 
 
 /*
@@ -120,3 +121,48 @@ class ExampleAuxiliaryConstructor(n: Int, d: Int){
 
 println(new ExampleAuxiliaryConstructor(3, 2))
 println(new ExampleAuxiliaryConstructor(3))
+
+
+/*
+* ----------------------
+*  Method overloading
+* ----------------------
+*
+*/
+
+class ExampleMethodOverloading {
+
+  def customMethod(x: Int): Unit = println(x)
+
+  def customMethod(x: String): Unit = println(x)
+}
+
+println((new ExampleMethodOverloading).customMethod(1))
+println(new ExampleMethodOverloading customMethod "Hi")
+
+
+/*
+* ----------------------
+*  Functional Objects
+* ----------------------
+*
+* objects that do not have any mutable state
+*/
+
+class Rational(n: Int, d: Int) {
+
+  val numer: Int = n
+  val denom: Int = d
+
+  override def toString = numer +"/"+ denom
+
+  //methods always return new Object
+  def add(that: Rational): Rational =
+    new Rational(
+      numer * that.denom + that.numer * denom,
+      denom * that.denom
+    )
+
+  def * (that: Rational): Rational =
+    new Rational(numer * that.numer, denom * that.denom)
+}
