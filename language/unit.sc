@@ -1,0 +1,6 @@
+
+
+def greet(): Unit = {  }
+
+
+() == greet()
