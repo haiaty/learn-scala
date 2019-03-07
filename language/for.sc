@@ -10,3 +10,19 @@ for (i <- 1 to 4)
 
 for (i <- 1 until 4)
   println("Iteration " + i)
+
+
+/*
+* Using filter with if on for loop
+*
+* */
+for (i <- 1 until 4 if i == 2) //print Iteration 2
+  println("Iteration " + i)
+
+
+//using more than one filter (they are in and and not in or)
+for (i <- 1 until 4
+     if i == 2
+     if i == 1
+) println("Iteration " + i)
+
