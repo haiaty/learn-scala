@@ -39,9 +39,10 @@
 
 //a block with a bunch of case inside is one way of defining an anonymous function.
 
-(x: Int) => {
+/*(x: Int) => {
+
     case (k, v) ⇒ println(k + " → " + v)
-}
+}*/
 /*
 * ----------------------
 *  Named functions
@@ -93,5 +94,18 @@ val squareRoot: PartialFunction[Double, Double] = {
 }
 
 println(squareRoot(2.0))
-println(squareRoot(-4))
-//println(squareRoot("hh"))
+//println(squareRoot(-4)) throwns scala.MatchError: -4.0 (of class java.lang.Double)
+
+//with partial functions you can test if it is defined for certain arguments
+
+println(squareRoot.isDefinedAt(0))
+
+
+val fun: PartialFunction[List[Int], String] = {
+
+    case Nil => "one"
+    case x::y::rest => "two"
+}
+
+
+fun.isDefinedAt(List(1,2,3)) //true
