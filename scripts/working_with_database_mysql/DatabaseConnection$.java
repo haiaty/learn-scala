@@ -1,10 +1,3 @@
-import java.sql.DriverManager
-import java.sql.Connection
-
-// MySQL/MariaDB driver must be added to classpath,
-// e.g. mysql-connector-java-8.0.15.jar
-// downloadable from https://mvnrepository.com/artifact/mysql/mysql-connector-java/8.0.15
-
 /**
  * A Scala JDBC connection example by Alvin Alexander,
  * http://alvinalexander.com
@@ -26,7 +19,7 @@ object DatabaseConnection {
     var connection: Connection = null
 
     try {
-    
+
       // make the connection
       Class.forName(driver)
       connection = DriverManager.getConnection(url, username, password)
@@ -40,7 +33,7 @@ object DatabaseConnection {
         val fieldA = resultSet.getString("field_a")
         println("id, field_a = " + id + ", " + fieldA)
       }
-      
+
     } catch {
       case e: Throwable => println(e.toString)
     }

@@ -26,3 +26,21 @@ for (i <- 1 until 4
      if i == 1
 ) println("Iteration " + i)
 
+
+//Mid-stream assignment in a for expression
+
+for {i <- 1 until 4
+     if i == 2
+     a = 3
+} println("Mid stream assignment " + a) // 3
+
+/**
+  * ------------------------------------
+  * using yield to produce a new collection
+  * -------------------------------------
+  * // - The type of the resulting collection is based on the kind of collections processed in the iteration clauses
+  * // - The yield goes before the entire body. Even if the body is a block surrounded by curly braces, put
+  * //  the yield before the first curly brace, not before the last expression of the block.
+  */
+var newCol = for {i <- 1 until 4
+} yield {i + "a"}

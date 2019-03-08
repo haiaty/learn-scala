@@ -1,6 +1,11 @@
 
 
-
+/**
+  * ------------------------------------------------------
+  * Print all files in a directory
+  * -----------------------------------------------------
+  *
+  * */
 val filesHere = (new java.io.File(".")).listFiles
 
 for (file <- filesHere)
