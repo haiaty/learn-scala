@@ -1,4 +1,10 @@
 
+/**
+* ----------------------------------------------
+*
+* -----------------------------------------------
+  - The for loop in the above code is actually a method call to the the foreach method of the nums object (that is an instance of scala.Seq) passing the body of the for loop as a closure in the foreach method. The code inside the for loop is actually the apply(..) method of the closure (a scala.Function1 in our case).
+*/
 //the "i <- 1 to 4" syntax is called a generator
 for (i <- 1 to 4)
   println("Iteration " + i)
