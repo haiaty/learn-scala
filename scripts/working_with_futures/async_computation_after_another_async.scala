@@ -2,8 +2,8 @@ import scala.concurrent.Future
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.util.{Success, Failure}
 
-//resources for future: http://allaboutscala.com/tutorials/chapter-9-beginner-tutorial-using-scala-futures/
-
+// resources for future: http://allaboutscala.com/tutorials/chapter-9-beginner-tutorial-using-scala-futures/
+// https://alvinalexander.com/scala/concurrency-with-scala-futures-tutorials-examples
 
 // -
 
