@@ -8,6 +8,8 @@
   - Future allows you to specify transformations on Future results and obtain a new future that represents the composition of the two asynchronous computations: example Map, flat Map
   - One advantage of Scala's futures is that they help you avoid blocking.  By avoiding blocking, you can keep the finite number of threads you decide to work with busy
   - it lets you simplify your code and take advantage of multiple processors.
+
+   Remenber: The value in a Future is always an instance of one of the Try types: Success or Failure
 */
 
 import scala.concurrent.Future
