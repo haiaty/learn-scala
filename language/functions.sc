@@ -113,6 +113,26 @@ f("ping")
 
 */
 
+def a(x:Int) = (y: Int) => x + y
+// the shorter version of:
+// def a(x:Int): Int => Int = { return (y: Int) => x + y}
+//
+// def a(x:Int)  ---> a literal function that takes a Int
+// :Int => Int ---> it means that the function a will return a closure that accepst Int and returns an Int
+// return (y:Int) => x + y  ----->  this a return statement that returns a closure that uses the input x
+
+//can aso be written as:
+// ---  def a(x:Int) = (y: Int) => x + y
+// ---  def a(x:Int): Int => Int = return (y: Int) => x + y
+// ---  def a(x:Int): Int => Int = (y: Int) => x + y
+
+// b will be a closure having x = 1
+val b = a(1)
+println(b)
+
+
+println(b(1)) // 2
+
 //One way to make a function literal more brief is to leave off the parameter types
 
 var someNums = List(1,2)
