@@ -66,3 +66,29 @@ s.toLowerCase
   */
 
 s toLowerCase
+
+
+/**
+* ----------------------------------------------
+* you can use curly braces if method has only one parameter
+* -----------------------------------------------
+ In any method invocation in Scala in which you're passing in exactly one argument, you can opt to use curly braces to surround the argument instead of parentheses.
+*/
+
+def oneParam(x: Int) = println(x)
+
+oneParam { 2 }
+
+
+/**
+* ----------------------------------------------
+* By name param
+* -----------------------------------------------
+By-name parameters exist precisely so that you can do this. To make a by-name parameter, you give the parameter a type starting with => instead of () =>.
+
+*/
+
+def byNameParam(predicate: => Boolean) =
+  if (assertionsEnabled && !predicate)
+    throw new AssertionError
+
