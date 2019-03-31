@@ -73,6 +73,19 @@ try {
 catch { case NonFatal(t) => "handled"}
 
 
+
+//In the rare case when you absolutely need to catch Throwable the correct way to do it is the following
+// this because of http://www.tzavellas.com/techblog/2010/09/20/catching-throwable-in-scala/
+import scala.util.control.ControlThrowable
+
+try {
+  throw new Exception ("hh")
+} catch {
+  case e: ControlThrowable => throw e
+  case e => "handle throwable"
+}
+
+
 // WARNING - DANGER
 // the following solution is NOT SAFE, it may cause you a lot of bugs, so before using it
 // you must know what you are doing
@@ -91,17 +104,6 @@ try {
 
 }
 
-
-//In the rare case when you absolutely need to catch Throwable the correct way to do it is the following
-// this because of http://www.tzavellas.com/techblog/2010/09/20/catching-throwable-in-scala/
-import scala.util.control.ControlThrowable
-
-try {
-  throw new Exception ("hh")
-} catch {
-  case e: ControlThrowable => throw e
-  case e => "handle throwable"
-}
 /**
 * ----------------------------------------------
 * Finally

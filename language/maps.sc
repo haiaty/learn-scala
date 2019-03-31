@@ -1,3 +1,4 @@
+
 /*
 * ----------------------
 *  Map definition
@@ -16,6 +17,16 @@ val romanNumeral = Map(
 * */
 
 println(romanNumeral(4))
+
+
+/**
+  * ----------------------------------------------
+  * empty definition
+  * -----------------------------------------------
+
+  */
+
+var kv = Map.empty[String, String]
 
 
 /*
@@ -38,3 +49,16 @@ map += (2 -> "b")
 
 println(map(2))
 
+
+/**
+* ----------------------------------------------
+* map of strings
+* -----------------------------------------------
+
+*/
+
+var aMapStringTostring = Map.empty[String, String]
+
+kv += ("a" -> "b")
+
+kv("a")

@@ -27,6 +27,11 @@ aVar.methodToBeReused
 /**
 * ----------------------------------------------
 * multiple traits with 'with'
+  *
+  * traits further to the right take effect first.
+  *
+  * When you call a method on a class with mixins, the method in the trait furthest to the right is called first. If that method calls super,
+  * it invokes the method in the next trait to its left, and so on.
 * -----------------------------------------------
 
 */
