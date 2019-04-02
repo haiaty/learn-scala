@@ -20,10 +20,23 @@ def toInt(in: String): Option[Int] = {
   }
 }
 
-//client code just need to handle the right case
+//--------------------------------------
+// accessing Option value from client code
+//------------------------------------------
+
+// with  getOrElse
+val x = toInt("1").getOrElse(0)
+
+//with pattern matching
 toInt("hi") match {
   case Some(i) => println(i)
   case None => println("That didn't work.")
+}
+
+
+//with foreach
+toInt("1").foreach{ i =>
+    println(s"Got an int: $i")
 }
 
 
