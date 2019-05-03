@@ -1,0 +1,32 @@
+
+
+object bombard extends App {
+
+  
+  import scala.concurrent.{Await, Future}
+  import scala.concurrent.ExecutionContext.Implicits.global
+  import com.softwaremill.sttp._
+
+  
+  for( i <- 1 to 3) {
+
+    Future {
+
+      val request = sttp.auth.basic("francesco.zanoni@nubilaria.com_2140285", "Suardi1212|||||")
+        // use an optional parameter in the URI
+        .get(uri"http://10.146.103.52/ibans/GI75NWBK000000007099453/validity")
+
+      implicit val backend = HttpURLConnectionBackend()
+      val response = request.send()
+
+
+      println(response.body)
+
+    }
+  }
+
+  
+  Thread.sleep(15000)
+
+
+}
