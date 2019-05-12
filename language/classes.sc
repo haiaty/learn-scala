@@ -64,6 +64,17 @@ class ExampleWithBody {
 println(new ExampleWithBody)
 
 
+
+/*
+* ----------------------
+*  class declaration without curly braces
+* ----------------------
+*
+* n Scala you can leave out the braces around an empty class body if you wish
+*/
+
+class ClassWithoutCurlyBraces
+
 /*
 * ----------------------
 *  override toString
