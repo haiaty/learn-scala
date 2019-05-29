@@ -6,7 +6,7 @@
    - match expressions result in a value
 
   A pattern match includes a sequence of alternatives, each starting with the keyword case.
-  Each alternative includes a pattern and one or more expressions, which will be evaluated if the pattern matches. An arrow symbol => separates the pattern from the expressions.
+  ˛Each alternative includes a pattern and one or more expressions, which will be evaluated if the pattern matches. An arrow symbol => separates the pattern from the expressions.
 */
 
 var x = "Hello"
